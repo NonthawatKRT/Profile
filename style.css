@@ -113,3 +113,18 @@ footer {
   background-color: #333;
   color: #fff;
 }
+
+.back-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: #555;
+}
