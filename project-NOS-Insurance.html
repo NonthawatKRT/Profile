@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Detail — Non Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent1:#7c3aed;
+      --accent2:#06b6d4;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,sans-serif;background:linear-gradient(180deg,var(--bg),#071026);color:#e6eef8}
+    a{color:var(--accent2);text-decoration:none}
+
+    .container{max-width:900px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px}
+    header a{color:var(--muted)}
+    header a:hover{color:white}
+
+    .hero{margin-bottom:24px}
+    .hero h1{margin:0;font-size:2rem}
+    .hero p{color:var(--muted);line-height:1.6}
+
+    .cover{width:100%;border-radius:12px;height:320px;object-fit:cover;background:linear-gradient(180deg,#111c2f,#0a162a);margin:18px 0}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:24px 0}
+    .gallery img{width:100%;border-radius:10px;object-fit:cover;height:200px;background:#0a162a}
+
+    section{margin-top:32px}
+    h2{margin:0 0 12px 0}
+    p{line-height:1.6;color:var(--muted)}
+
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;font-weight:700;text-decoration:none;margin-right:8px}
+
+    footer{margin:48px 0 24px;text-align:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html">← Back to Portfolio</a>
+      <div style="font-weight:700">Non — Project Detail</div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>NOS Insurance Website</h1>
+        <h3 style="color: var(--muted);">Unity Game Development</h3>
+      </div>
+
+      <div class="cover"></div>
+
+      <section>
+        <h2>Showcase Images</h2>
+        <div class="gallery">
+          <img src="images/nos1.png" alt="Project Screenshot 1">
+          <img src="images/nos2.png" alt="Project Screenshot 2">
+          <img src="images/nos3.png" alt="Project Screenshot 3">
+          <img src="images/nos4.png" alt="Project Screenshot 4">
+          <img src="images/nos5.png" alt="Project Screenshot 5">
+          <img src="images/nos6.png" alt="Project Screenshot 6">
+          <img src="images/nos7.png" alt="Project Screenshot 6">
+          <img src="images/nos8.png" alt="Project Screenshot 6">
+          <img src="images/nos9.png" alt="Project Screenshot 6">
+        </div>
+      </section>
+
+      <section>
+        <h2>About the Project</h2>
+        <p>พัฒนาเว็บแอปพลิเคชัน All-in-One Insurance Service สำหรับลูกค้า พนักงานขาย และผู้ดูแลระบบ  
+    ระบบนี้ครอบคลุมตั้งแต่การสมัครสมาชิก การเข้าสู่ระบบ การจัดการโปรไฟล์ การเลือกแพ็คเกจประกัน และระบบจำลองการชำระเงิน (Mock Payment) พร้อมการสร้าง QR Code</p>
+      </section>
+      
+      <section>
+        <h2>My role</h2>
+        <p>รับผิดชอบ Full-Stack Development: พัฒนาระบบ Backend และฐานข้อมูลทั้งหมด รวมถึง Frontend ของบางหน้า เช่น หน้า Register, Login, User Profile, Admin Dashboard และ Homepage  
+    ฟีเจอร์หลักที่พัฒนารวมถึง: ระบบลงทะเบียนพร้อม Email Verification, ระบบ Login แยกสิทธิ์ Customer / Sale / Admin, Admin Dashboard, การเชื่อมโยงลูกค้ากับพนักงานขายโดยอัตโนมัติ, ระบบ Profile Management, และระบบตะกร้าสินค้า / การชำระเงินแบบจำลอง</p>
+      </section>
+
+      <section>
+        <h2>Platform</h2>
+        <p>Website</p>
+      </section>
+
+      <section>
+        <h2>Features</h2>
+        <ul>
+          <li>Registration system with email verification</li>
+          <li>Login system for customers, sales, and admin</li>
+          <li>Admin dashboard for managing sales and users</li>
+          <li>Automatic assignment of customers to sales</li>
+          <li>User profile system with editable data and profile picture upload</li>
+          <li>Mock payment system with QR code generation</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technologies Used</h2>
+        <ul>
+          <li>PHP, HTML, CSS, JavaScript</li>
+          <li>AppServ stack (Apache, MySQL)</li>
+          <li>MySQL Database Design</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Preview & Links</h2>
+        <p>See the code or try a preview build:</p>
+        <p><strong>Note:</strong> This project was developed as part of my classwork, so the demo is for testing in a local environment. Most features work normally, but some live demo issues may occur (e.g., registration may show errors while email verification still functions).</p>
+        <a class="btn" href="https://github.com/NonthawatKRT/IifeInsuranceWebsite">Source Code</a>
+        <a class="btn" href="http://nonthawat002.ddns.net:8086">Live Preview</a>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Non — Portfolio Detail
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+  

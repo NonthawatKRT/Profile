@@ -1,91 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Non's Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Non — Portfolio</title>
+    <meta name="description" content="Portfolio of Non — Computer Engineering student, game & web developer." />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f1724;
+            /* deep navy */
+            --card: #0b1220;
+            --muted: #94a3b8;
+            --accent1: #7c3aed;
+            /* purple */
+            --accent2: #06b6d4;
+            /* teal */
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 138%;
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
+            color: #e6eef8;
+            background: linear-gradient(180deg, var(--bg), #071026);
+            -webkit-font-smoothing: antialiased
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 24px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            color: white;
+            font-weight: 700
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 16px;
+            font-weight: 600
+        }
+
+        nav a:hover {
+            color: white
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 36px;
+            align-items: center;
+            margin-top: 36px
+        }
+
+        .intro h1 {
+            margin: 0;
+            font-size: 2.2rem
+        }
+
+        .intro p {
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        .cta {
+            margin-top: 20px
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: white;
+            font-weight: 700;
+            text-decoration: none
+        }
+
+        .profile-card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6)
+        }
+
+        .avatar {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            object-fit: cover;
+            background: linear-gradient(180deg, #112433, #0a1630)
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px
+        }
+
+        .meta .name {
+            font-weight: 700
+        }
+
+        .skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px
+        }
+
+        .chip {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--glass);
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        section {
+            margin-top: 48px
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px
+        }
+
+        .project {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 16px;
+            border-radius: 12px
+        }
+
+        .project h3 {
+            margin: 0 0 6px 0
+        }
+
+        .project p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem
+        }
+
+        .project .links {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px
+        }
+
+        .small {
+            font-size: 0.9rem;
+            color: var(--muted)
+        }
+
+        footer {
+            margin: 48px 0 120px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        /* contact */
+        .contact-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            background: var(--card);
+            padding: 18px;
+            border-radius: 12px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            background: transparent;
+            color: #e6eef8
+        }
+
+        textarea {
+            min-height: 120px
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        /* responsive */
+        @media (max-width:880px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 24px auto;
+                padding: 18px
+            }
+
+            .profile-card {
+                order: 2
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <nav>
-      <h1>Non</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <img src="images/me.jpg" alt="" class="logo">
+                <div>
+                    <div style="font-weight:700">Non</div>
+                    <div class="muted">Game & Web Developer — Computer Engineering</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
-  <!-- Hero Section -->
-  <!-- <section id="hero">
-    <div class="hero-content fade-left">
-      <img src="images/me.png" alt="Nonthawat" class="hero-img">
-      <h1 class="hero-name">NONTHAWAT TANTIKUNWATTHANA</h1>
+        <main>
+            <section class="hero">
+                <div class="intro">
+                    <h1>Hi — I'm Non. I build games, websites and tools.</h1>
+                    <p>Third-year Computer Engineering student with a focus on game development and web
+                        development. I enjoy turning ideas into interactive experiences — gameplay systems, web apps,
+                        and multiplayer prototypes.</p>
+                    <div class="cta">
+                        <a class="btn" href="#projects">See my work</a>
+                        <a class="btn"
+                            style="margin-left:10px;opacity:0.9;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:700"
+                            href="#contact">Get in touch</a>
+                    </div>
+
+                    <div style="margin-top:28px">
+                        <strong>Current stack:</strong>
+                        <div class="skills" style="margin-top:8px">
+                            <span class="chip">Unity / C#</span>
+                            <span class="chip">Unreal Engine</span>
+                            <span class="chip">HTML/CSS/JS</span>
+                            <span class="chip">PHP</span>
+                            <span class="chip">SQL</span>
+                            <span class="chip">n8n</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="profile-card">
+                    <div
+                        style="height:220px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b1220,#071427);color:var(--muted)">
+                        <!-- Placeholder avatar — replace with your photo -->
+                        <div style="text-align:center">
+                            <!-- <svg width="96" height="96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+                            <img src="images/me.jpg"
+                                style="width:96px;height:96px;object-fit:cover;border-radius:50%;border:2px solid var(--glass);box-shadow:0 4px 12px rgba(0,0,0,0.4)" />
+                            <rect width="24" height="24" rx="4" fill="url(#g)" />
+                            <defs>
+                                <linearGradient id="g" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#7c3aed" />
+                                    <stop offset="1" stop-color="#06b6d4" />
+                                </linearGradient>
+                            </defs>
+                            </svg>
+                            <div style="margin-top:12px;font-weight:700">My team</div>
+                            <div class="small muted"><strong>Role:</strong> Game System Developer</div>
+                        </div>
+                    </div>
+
+                    <div class="meta">
+                        <div>
+                            <div class="name">Murasaki Team</div>
+                            <div class="small muted">murasaki.devteam@gmail.com</div>
+                        </div>
+                        <div style="text-align:right">
+                            <!-- <div class="small muted">Srinakharinwirot University</div> -->
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px">
+                        <div class="small muted">Short bio</div>
+                        <div style="margin-top:6px;color:var(--muted);line-height:1.4">We are a team of passionate
+                            developers dedicated to creating immersive gaming experiences. All-in-one service: design,
+                            develop, and deploy innovative web solutions.</div>
+                    </div>
+                </aside>
+            </section>
+
+            <section id="projects">
+                <h1 style="margin:0 0 20px 0">Projects</h1>
+                <div class="projects-grid">
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>Dungeons Of Shadow</h3>
+                        <h4 class="header muted">Unity Game</h4>
+                        <p class="small">พัฒนาเกมแนว Maze Escape โดยใช้ Prim’s Algorithm ในการสุ่มสร้างเขาวงกต
+                            เพื่อเพิ่มความท้าทายและความหลากหลายของด่าน</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Blender</span>
+                            <span class="chip">Unity</span>
+                            <span class="chip">C#</span>
+                        </div>
+
+                        <div style=" flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1;text-align: start; color: var(--accent);"class="small" href="project-Dungeon-Of-Shadows.html">More Info</a>
+                            <a style="flex: 1;text-align: end; color: #ee6b6e;" class="small" href="http://nonthawat002.ddns.net:8085">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>Food Waste Manager</h3>
+                        <h4 class="header muted">Android Application</h4>
+                        <p class="small">พัฒนาแอปพลิเคชันบนระบบ Android เพื่อจัดการวัตถุดิบและเมนูอาหาร
+                            ลดปัญหาการสูญเสียอาหารในร้านอาหารขนาดเล็ก โดยมีฟังก์ชันตรวจสอบวัตถุดิบเพียงพอต่อออเดอร์
+                            อัปเดตสต็อกอัตโนมัติ เพิ่มเมนูใหม่ และจัดการคลังสินค้า</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Flutter</span>
+                            <span class="chip">Dart</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-FoodWaste-Manager.html">More Info</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>NOS Insurance Website</h3>
+                        <h4 class="header muted">Website Application</h4>
+                        <p class="small">พัฒนาเว็บแอปพลิเคชัน All-in-One Insurance Service สำหรับลูกค้า พนักงานขาย
+                            และผู้ดูแลระบบ
+                            ระบบนี้ครอบคลุมตั้งแต่การสมัครสมาชิก การเข้าสู่ระบบ การจัดการโปรไฟล์ การเลือกแพ็คเกจประกัน
+                            และระบบจำลองการชำระเงิน (Mock Payment) พร้อมการสร้าง QR Code</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">PHP</span>
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JS</span>
+                            <span class="chip">SQL</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-NOS-Insurance.html">More Info</a>
+                            <a style="flex: 1; text-align: end; color: #ee6b6e;"class="small" href="http://nonthawat002.ddns.net:8086">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>SWU Metaverse</h3>
+                        <h4 class="header muted">Unity Game</h4>
+                        <p class="small">ได้รับรางวัลชนะเลิศในการประกวด Metaverse ของมหาวิทยาลัยศรีนครินทรวิโรฒ
+                            พัฒนาแพลตฟอร์ม Metaverse จำลองชีวิตในมหาวิทยาลัยให้สามารถเข้าถึงได้จากทุกที่
+                            รองรับผู้เล่นหลายคน มีระบบล็อกอิน, สร้างและปรับแต่งอวตาร, และสำรวจพื้นที่ 3
+                            มิติร่วมกับเพื่อน</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Multiplayer</span>
+                            <span class="chip">Blender</span>
+                            <span class="chip">Unity</span>
+                            <span class="chip">C#</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-SWU-Metaverse.html">More Info</a>
+                            <a style="flex: 1; text-align: end; color: #ee6b6e;"class="small" href="https://mangosgo.com/mango15v2/">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>RE-Mind Space</h3>
+                        <h4 class="header muted">Unity VR-Game</h4>
+                        <p class="small">พัฒนาเกม Virtual Reality Multi-Sensory Game
+                            เพื่อช่วยฟื้นฟูความจำของผู้สูงอายุที่มีภาวะสมองเสื่อมระยะต้นและระยะกลาง
+                            เป็นความร่วมมือระหว่างคณะวิศวกรรมศาสตร์กับคณะกายภาพบำบัดของมหาวิทยาลัย</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Blender</span>
+                            <span class="chip">Unity</span>
+                            <span class="chip">C#</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-Remindspace.html">More Info</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2 style="margin:0 0 12px 0">Skills & Tools</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">
+                    <div class="project"><strong>Languages</strong>
+                        <div class="small muted">C, C#, JavaScript, HTML, CSS, PHP, Python</div>
+                    </div>
+                    <div class="project"><strong>Engines & Libs</strong>
+                        <div class="small muted">Unity, Unreal Engine, React</div>
+                    </div>
+                    <div class="project"><strong>Platforms</strong>
+                        <div class="small muted">Windows, WebGL, Android</div>
+                    </div>
+                    <div class="project"><strong>Tools</strong>
+                        <div class="small muted">Git, VSCode, Blender (basic)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2 style="margin:0 0 12px 0">Contact</h2>
+                <div class="contact-card">
+                    <div>
+                        <div class="small muted"><strong>Personal email:</strong> nonthawatkrt@gmail.com</div>
+                        <div style="margin-top:8px" class="small muted"><strong>Team email:</strong>
+                            murasaki.devteam@gmail.com</div>
+                        <!-- <div style="margin-top:8px"><a class="btn" href="mailto:murasaki.devteam@gmail.com">Email me</a></div> -->
+
+                        <div style="margin-top:18px">
+                            <div class="small muted">Social</div>
+                            <div style="margin-top:8px;display:flex;gap:8px">
+                                <a class="chip" href="https://github.com/NonthawatKRT">GitHub</a>
+                                <a class="chip" href="#">LinkedIn</a>
+                                <a class="chip" href="https://nonthawatkrt.itch.io/">Itch.io</a>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:18px;color:var(--muted)">Looking for feedback or collaboration? I'm open
+                            to internships and project work.</div>
+                    </div>
+
+                    <!-- <div>
+            <form onsubmit="return submitForm(event)">
+              <div class="field">
+                <label class="small muted">Your name</label>
+                <input id="name" placeholder="Your name" />
+              </div>
+              <div class="field" style="margin-top:8px">
+                <label class="small muted">Your email</label>
+                <input id="email" placeholder="you@example.com" />
+              </div>
+              <div class="field" style="margin-top:8px">
+                <label class="small muted">Message</label>
+                <textarea id="message" placeholder="Write a short message"></textarea>
+              </div>
+              <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+                <button type="submit" class="btn">Send</button>
+              </div>
+            </form>
+          </div> -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> NonthawatKRT • Built with ❤️</div>
+            <div class="small muted">Made for demos and portfolio use</div>
+        </footer>
     </div>
-  </section> -->
 
-<section id="about" class="fade-in">
-  <div class="about-container">
-    <div class="profile-pic">
-      <img src="images/me.jpg" alt="Nonthawat Tantikunwatthana">
-    </div>
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>Hello! I'm <strong>Nonthawat</strong>, a 3rd-year Computer Engineering student at Srinakharinwirot University, Faculty of Engineering.  
-      I am passionate about web development, software, and game development, and I enjoy creating interactive projects with clean, modern designs.</p>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-      <h3>Skills</h3>
-      <p><strong>Game Development:</strong> Unity, Unreal Engine, Roblox Studio, Blender</p>
-      <p><strong>Tools & Software:</strong> VS Code, GitHub, MySQL, n8n</p>
-      <p><strong>Programming:</strong> C, C#, Java, PHP, Python, HTML, CSS, JavaScript</p>
-    </div>
-  </div>
-</section>
-
-
-  <section id="projects" class="fade-in">
-    <h2>My Projects</h2>
-    <div class="project-container">
-      <div class="project-card">
-        <h3>Dungeons Of Shadow</h3>
-        <p>Unity Game Development</p>
-        <a href="project-dungeons.html">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Food Waste Manager</h3>
-        <p>Java Application Development</p>
-        <a href="project-foodwaste.html">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>NOS Insurance Website</h3>
-        <p>Website Application & Database Development</p>
-        <a href="project-nos.html">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>SWU Metaverse</h3>
-        <p>Unity Game Development</p>
-        <a href="project-metaverse.html">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>RE-Mind Space</h3>
-        <p>Unity VR-Game Development</p>
-        <a href="project-remind.html">View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="fade-in">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:nonthawatkrt@gmail.com">nonthawatkrt@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/NonthawatKRT">github.com/NonthawatKRT</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Non. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value || '—';
+            const email = document.getElementById('email').value || '—';
+            const message = document.getElementById('message').value || '—';
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            // fallback - open mail client
+            window.location.href = `mailto:murasaki.devteam@gmail.com?subject=${encodeURIComponent('Portfolio contact from ' + name)}&body=${body}`;
+            return false;
+        }
+    </script>
 </body>
+
 </html>
