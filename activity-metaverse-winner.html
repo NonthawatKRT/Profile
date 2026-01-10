@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Metaverse Competition Winner - NONTHAWAT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #121212;
+            --border: #1f1f1f;
+            --muted: #a0a0a0;
+            --text: #e8e8e8;
+            --accent: #3dd8e8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        .meta {
+            color: var(--muted);
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .content h2 {
+            margin-top: 32px;
+            margin-bottom: 16px;
+            font-size: 1.8rem;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 24px 0;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background: rgba(61, 216, 232, 0.1);
+            border: 1px solid rgba(61, 216, 232, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--accent);
+        }
+
+        .highlight-box {
+            background: rgba(61, 216, 232, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html#activities" class="back-link">← Back to Portfolio</a>
+        
+        <div class="award-badge">🏆 1st Place Winner</div>
+        <h1>SWU Metaverse Competition Winner</h1>
+        <p class="meta">Competition Award • Srinakharinwirot University • 2024</p>
+
+        <div class="tags">
+            <span class="tag">Award</span>
+            <span class="tag">Multiplayer</span>
+            <span class="tag">Unity</span>
+            <span class="tag">VR</span>
+            <span class="tag">Networking</span>
+        </div>
+
+        <div class="content">
+            <h2>The Achievement</h2>
+            <p>
+                Won 1st place in Srinakharinwirot University's Metaverse Development Competition for creating 
+                an innovative virtual campus experience. Competed against multiple teams of talented developers 
+                and designers to create the most engaging and functional metaverse platform.
+            </p>
+
+            <img src="images/placeholder-award.jpg" alt="Award Ceremony" class="featured-image">
+            <p style="text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: -16px;">
+                [Add photo from award ceremony]
+            </p>
+
+            <h2>Project Overview</h2>
+            <p>
+                Created a fully functional virtual campus that allows students and faculty to interact, attend classes, 
+                and explore university facilities in a 3D virtual environment. The platform featured real-time 
+                multiplayer interactions, customizable avatars, and virtual spaces modeled after actual campus locations.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Project Details:</strong><br>
+                <strong>Development Time:</strong> 3 months<br>
+                <strong>Team Size:</strong> 5 members<br>
+                <strong>My Role:</strong> Game Systems Developer & Multiplayer Programming Lead<br>
+                <strong>Technology:</strong> Unity, Photon PUN2, Mirror Networking
+            </div>
+
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Multiplayer Networking:</strong> Real-time synchronization of up to 50 concurrent users</li>
+                <li><strong>Avatar System:</strong> Fully customizable avatars with clothing, accessories, and animations</li>
+                <li><strong>Virtual Classrooms:</strong> Interactive spaces for lectures and presentations</li>
+                <li><strong>Social Features:</strong> Voice chat, text messaging, and friend systems</li>
+                <li><strong>Campus Recreation:</strong> Detailed 3D models of iconic university buildings and locations</li>
+                <li><strong>Event System:</strong> Support for virtual events, conferences, and gatherings</li>
+            </ul>
+
+            <h2>Screenshots & Visuals</h2>
+            <div class="image-gallery">
+                <img src="images/placeholder-metaverse1.jpg" alt="Virtual Campus">
+                <img src="images/placeholder-metaverse2.jpg" alt="Avatar Customization">
+                <img src="images/placeholder-metaverse3.jpg" alt="Classroom">
+                <img src="images/placeholder-metaverse4.jpg" alt="Social Area">
+                <img src="images/placeholder-metaverse5.jpg" alt="Event Space">
+                <img src="images/placeholder-metaverse6.jpg" alt="Team Photo">
+            </div>
+            <p style="text-align: center; color: var(--muted); font-size: 0.9rem;">
+                [Add actual screenshots from the metaverse project]
+            </p>
+
+            <h2>Technical Challenges</h2>
+            <p>
+                Developing a stable multiplayer environment with smooth performance was one of the biggest challenges. 
+                We had to optimize network traffic, implement efficient state synchronization, and handle edge cases 
+                like disconnections and reconnections gracefully.
+            </p>
+
+            <ul>
+                <li>Implemented custom network interpolation for smooth character movement</li>
+                <li>Created an efficient LOD (Level of Detail) system for performance optimization</li>
+                <li>Developed a scalable room-based architecture for managing multiple virtual spaces</li>
+                <li>Optimized asset loading with dynamic streaming and caching systems</li>
+            </ul>
+
+            <h2>What Made It Win</h2>
+            <p>
+                The judges were impressed by:
+            </p>
+            <ul>
+                <li>Polished user experience and intuitive interface</li>
+                <li>Stable multiplayer performance with minimal lag</li>
+                <li>Attention to detail in campus recreation</li>
+                <li>Innovative social features and interaction systems</li>
+                <li>Scalability and potential for future expansion</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Impact:</strong> The project is being considered for official university use as a virtual 
+                campus platform. It has been showcased to university administration and is being evaluated for 
+                integration into distance learning programs.
+            </div>
+
+            <h2>What I Learned</h2>
+            <p>
+                This project was a comprehensive learning experience in multiplayer game development, 
+                project management, and working with stakeholders. Managing a team, coordinating with 
+                university officials for accurate campus recreation, and delivering a polished product 
+                under competition deadline taught me valuable skills in leadership and professional game development.
+            </p>
+
+            <h2>Links & Resources</h2>
+            <p>
+                <a href="https://mangosgo.com/mango15v2/" style="color: var(--accent); text-decoration: none;">Try the Demo →</a><br>
+                <a href="#" style="color: var(--accent); text-decoration: none;">View Project Presentation →</a><br>
+                <a href="#" style="color: var(--accent); text-decoration: none;">Read More About the Competition →</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

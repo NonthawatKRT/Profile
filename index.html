@@ -4,509 +4,1154 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Non — Portfolio</title>
-    <meta name="description" content="Portfolio of Non — Computer Engineering student, game & web developer." />
+    <title>NONTHAWAT — Game Development Portfolio</title>
+    <meta name="description" content="Portfolio of NONTHAWAT — Computer Engineering student & Game Developer." />
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg: #0f1724;
-            /* deep navy */
-            --card: #0b1220;
-            --muted: #94a3b8;
-            --accent1: #7c3aed;
-            /* purple */
-            --accent2: #06b6d4;
-            /* teal */
-            --glass: rgba(255, 255, 255, 0.03);
+            --bg: #0a0a0a;
+            --card: #121212;
+            --border: #1f1f1f;
+            --muted: #a0a0a0;
+            --text: #e8e8e8;
+            --accent: #3dd8e8;
+            --accent-hover: #2bc4d4;
         }
 
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html,
         body {
-            height: 138%;
             margin: 0;
-            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial;
-            color: #e6eef8;
-            background: linear-gradient(180deg, var(--bg), #071026);
-            -webkit-font-smoothing: antialiased
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 24px
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
         }
 
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text);
         }
 
         .logo {
-            width: 46px;
-            height: 46px;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, var(--accent1), var(--accent2));
-            color: white;
-            font-weight: 700
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
         }
 
         nav a {
             color: var(--muted);
             text-decoration: none;
-            margin-left: 16px;
-            font-weight: 600
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
         }
 
         nav a:hover {
-            color: white
+            color: var(--text);
         }
 
         .hero {
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 36px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-top: 36px
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
         }
 
-        .intro h1 {
-            margin: 0;
-            font-size: 2.2rem
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
         }
 
-        .intro p {
+        .hero .subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--muted);
-            line-height: 1.6
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero .name-highlight {
+            color: var(--accent);
         }
 
         .cta {
-            margin-top: 20px
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 16px;
-            border-radius: 10px;
-            background: linear-gradient(90deg, var(--accent1), var(--accent2));
-            color: white;
-            font-weight: 700;
-            text-decoration: none
-        }
-
-        .profile-card {
-            background: var(--card);
-            padding: 18px;
-            border-radius: 12px;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6)
-        }
-
-        .avatar {
-            width: 100%;
-            height: 220px;
+            padding: 14px 32px;
             border-radius: 8px;
-            object-fit: cover;
-            background: linear-gradient(180deg, #112433, #0a1630)
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 16px;
         }
 
-        .meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 12px
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
         }
 
-        .meta .name {
-            font-weight: 700
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
-        .skills {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 12px
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
         }
 
-        .chip {
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: var(--glass);
-            color: var(--muted);
-            font-weight: 600
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         section {
-            margin-top: 48px
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: 100px 40px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            margin-bottom: 60px;
+        }
+
+        .about-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .about-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .skills-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 24px;
+        }
+
+        .skill-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            padding: 0 40px;
         }
 
         .project {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-            padding: 16px;
-            border-radius: 12px
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
         }
 
         .project h3 {
-            margin: 0 0 6px 0
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .project .header {
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
         }
 
         .project p {
-            margin: 0;
             color: var(--muted);
-            font-size: 0.95rem
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .project .chip {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(61, 216, 232, 0.1);
+            border: 1px solid rgba(61, 216, 232, 0.2);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
 
         .project .links {
-            margin-top: 10px;
             display: flex;
-            gap: 8px
+            justify-content: space-between;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project .links a {
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .project .links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-date {
+            flex: 1;
+            padding: 0 40px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            text-align: left;
+        }
+
+        .timeline-date-text {
+            display: inline-block;
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .timeline-marker {
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 8px;
+            z-index: 1;
+            box-shadow: 0 0 0 4px var(--card);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 0 40px;
+        }
+
+        .timeline-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .timeline-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .timeline-card .category {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(61, 216, 232, 0.1);
+            border: 1px solid rgba(61, 216, 232, 0.2);
+            border-radius: 10px;
+            color: var(--accent);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .timeline-card p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .timeline-card .learn-more {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: opacity 0.2s;
+        }
+
+        .timeline-card .learn-more:hover {
+            opacity: 0.7;
+        }
+
+        .timeline-card .learn-more::after {
+            content: ' →';
+            margin-left: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-date {
+                display: none;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .timeline-content {
+                padding: 0 0 0 60px;
+            }
+
+            .timeline-card {
+                padding: 20px;
+            }
+        }
+
+        footer {
+            padding: 60px 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin: 0 40px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-content p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .contact-links a {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .contact-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
         }
 
         .small {
             font-size: 0.9rem;
-            color: var(--muted)
-        }
-
-        footer {
-            margin: 48px 0 120px;
             color: var(--muted);
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        /* contact */
-        .contact-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            background: var(--card);
-            padding: 18px;
-            border-radius: 12px
-        }
-
-        .field {
-            display: flex;
-            flex-direction: column
-        }
-
-        input,
-        textarea {
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            background: transparent;
-            color: #e6eef8
-        }
-
-        textarea {
-            min-height: 120px
-        }
-
-        .muted {
-            color: var(--muted)
         }
 
         /* responsive */
-        @media (max-width:880px) {
-            .hero {
+        @media (max-width: 768px) {
+            .container,
+            .header-content,
+            .projects-grid,
+            .about-section,
+            .contact-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .container {
-                margin: 24px auto;
-                padding: 18px
-            }
-
-            .profile-card {
-                order: 2
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="header-content">
             <div class="brand">
-                <img src="images/me.jpg" alt="" class="logo">
-                <div>
-                    <div style="font-weight:700">Non</div>
-                    <div class="muted">Game & Web Developer — Computer Engineering</div>
-                </div>
+                <img src="images/me.jpg" alt="Profile" class="logo">
+                <span>NONTHAWAT</span>
             </div>
             <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#activities">Activities</a>
                 <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <main>
-            <section class="hero">
-                <div class="intro">
-                    <h1>Hi — I'm Non. I build games, websites and tools.</h1>
-                    <p>Third-year Computer Engineering student with a focus on game development and web
-                        development. I enjoy turning ideas into interactive experiences — gameplay systems, web apps,
-                        and multiplayer prototypes.</p>
-                    <div class="cta">
-                        <a class="btn" href="#projects">See my work</a>
-                        <a class="btn"
-                            style="margin-left:10px;opacity:0.9;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:700"
-                            href="#contact">Get in touch</a>
+    <main>
+        <section id="home" class="hero">
+            <p class="subtitle">Hello, I am 3rd year computer engineering student</p>
+            <h1>
+                <span class="name-highlight">NONTHAWAT</span><br>
+                PORTFOLIO
+            </h1>
+            <div class="cta">
+                <a class="btn btn-primary" href="#projects">Explore</a>
+                <a class="btn btn-secondary" href="Nonthawat_CV.pdf" download>Get my CV</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-intro">
+                    <h2>About</h2>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">My Journey</h3>
+                    <p>
+                        I am a Computer Engineering student at Srinakharinwirot University with a GPA of 3.79, specializing in Game Development. 
+                        My journey involves creating immersive gaming experiences, from designing engaging gameplay mechanics 
+                        to implementing complex game systems and multiplayer features.
+                    </p>
+                    <p>
+                        I am passionate about combining creativity with technology to build interactive worlds and memorable player experiences. 
+                        Currently looking for game development internship opportunities for June 2026 to December 2026.
+                    </p>
+                    
+                    <div class="skills-tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Unreal Engine</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Blender</span>
+                        <span class="tag">Game Design</span>
+                        <span class="tag">3D Modeling</span>
+                        <span class="tag">VR Development</span>
+                        <span class="tag">Multiplayer</span>
+                        <span class="tag">Game Physics</span>
+                        <span class="tag">AI Programming</span>
+                        <span class="tag">Shader Programming</span>
+                        <span class="tag">Level Design</span>
+                        <span class="tag">Gameplay Programming</span>
                     </div>
+                </div>
 
-                    <div style="margin-top:28px">
-                        <strong>Current stack:</strong>
-                        <div class="skills" style="margin-top:8px">
-                            <span class="chip">Unity / C#</span>
-                            <span class="chip">Unreal Engine</span>
-                            <span class="chip">HTML/CSS/JS</span>
-                            <span class="chip">PHP</span>
-                            <span class="chip">SQL</span>
-                            <span class="chip">n8n</span>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="icon">🎮</div>
+                        <h3>Game Development</h3>
+                        <p>Creating immersive gaming experiences using Unity and Unreal Engine</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🎨</div>
+                        <h3>3D Design & Modeling</h3>
+                        <p>Designing and modeling 3D assets and environments using Blender</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🌐</div>
+                        <h3>Multiplayer Systems</h3>
+                        <p>Building networked multiplayer games and real-time synchronization</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🥽</div>
+                        <h3>VR/AR Development</h3>
+                        <p>Creating virtual reality experiences for immersive gameplay</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" style="padding: 100px 40px;">
+            <h2 style="text-align: center; margin-bottom: 20px;">Game Development Journey</h2>
+            <p style="text-align: center; color: var(--muted); margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                A timeline of my experiences in game development, from workshops and competitions to collaborative projects and research.
+            </p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- January 2026 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Jan 5, 2026</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Exhibition</span>
+                            <h3>Thailand Inventor's Day 2026</h3>
+                            <p>Participated as part of Srinakharinwirot University team, operating an activity booth in the highlight zone featuring SWU-Metaverse VR game experience for visitors.</p>
+                            <a href="activity-thailand-inventors-day.html" class="learn-more">View Details</a>
                         </div>
                     </div>
                 </div>
 
-                <aside class="profile-card">
-                    <div
-                        style="height:220px;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b1220,#071427);color:var(--muted)">
-                        <!-- Placeholder avatar — replace with your photo -->
-                        <div style="text-align:center">
-                            <!-- <svg width="96" height="96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
-                            <img src="images/murasakiicon.png"
-                                style="width:96px;height:96px;object-fit:cover;border-radius:50%;border:2px solid var(--glass);box-shadow:0 4px 12px rgba(0,0,0,0.4)" />
-                            <rect width="24" height="24" rx="4" fill="url(#g)" />
-                            <defs>
-                                <linearGradient id="g" x1="0" x2="1">
-                                    <stop offset="0" stop-color="#7c3aed" />
-                                    <stop offset="1" stop-color="#06b6d4" />
-                                </linearGradient>
-                            </defs>
-                            </svg>
-                            <div style="margin-top:12px;font-weight:700">My team</div>
-                            <div class="small muted"><strong>My Role:</strong> Game System Developer</div>
-                        </div>
+                <!-- December 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Dec 5, 2025</span>
                     </div>
-
-                    <div class="meta">
-                        <div>
-                            <div class="name">Murasaki Team</div>
-                            <div class="small muted">murasaki.devteam@gmail.com</div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Workshop</span>
+                            <h3>Metaverse Workshop at I-Nam Cafe & Bar</h3>
+                            <p>Joined lecturers team with Chula metaverse to conduct metaverse training workshop at I-Nam Cafe & Bar in Amphawa, Samut Songkhram, Thailand.</p>
+                            <a href="activity-inam-cafe-workshop.html" class="learn-more">View Details</a>
                         </div>
-                        <div style="text-align:right">
-                            <!-- <div class="small muted">Srinakharinwirot University</div> -->
-                        </div>
-                    </div>
-
-                    <div style="margin-top:12px">
-                        <div class="small muted">Short bio</div>
-                        <div style="margin-top:6px;color:var(--muted);line-height:1.4">We are a team of passionate
-                            developers dedicated to creating immersive gaming experiences. All-in-one service: design,
-                            develop, and deploy innovative web solutions.</div>
-                    </div>
-                </aside>
-            </section>
-
-            <section id="projects">
-                <h1 style="margin:0 0 20px 0">Projects</h1>
-                <div class="projects-grid">
-                    <article style="display: flex; flex-direction: column;" class="project">
-                        <h3>Dungeons Of Shadow</h3>
-                        <h4 class="header muted">Unity Game</h4>
-                        <p class="small">พัฒนาเกมแนว Maze Escape โดยใช้ Prim’s Algorithm ในการสุ่มสร้างเขาวงกต
-                            เพื่อเพิ่มความท้าทายและความหลากหลายของด่าน</p>
-                        <div style="margin-top: 20px; margin-bottom: 20px;">
-                            <span class="chip">Blender</span>
-                            <span class="chip">Unity</span>
-                            <span class="chip">C#</span>
-                        </div>
-
-                        <div style=" flex: 1; justify-content: start; align-items: end;" class="links">
-                            <a style="flex: 1;text-align: start; color: var(--accent);"class="small" href="project-Dungeon-Of-Shadows.html">More Info</a>
-                            <a style="flex: 1;text-align: end; color: #ee6b6e;" class="small" href="http://nonthawat002.ddns.net:8085">Live Demo</a>
-                        </div>
-                    </article>
-
-                    <article style="display: flex; flex-direction: column;" class="project">
-                        <h3>Food Waste Manager</h3>
-                        <h4 class="header muted">Android Application</h4>
-                        <p class="small">พัฒนาแอปพลิเคชันบนระบบ Android เพื่อจัดการวัตถุดิบและเมนูอาหาร
-                            ลดปัญหาการสูญเสียอาหารในร้านอาหารขนาดเล็ก โดยมีฟังก์ชันตรวจสอบวัตถุดิบเพียงพอต่อออเดอร์
-                            อัปเดตสต็อกอัตโนมัติ เพิ่มเมนูใหม่ และจัดการคลังสินค้า</p>
-                        <div style="margin-top: 20px; margin-bottom: 20px;">
-                            <span class="chip">Flutter</span>
-                            <span class="chip">Dart</span>
-                        </div>
-                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
-                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-FoodWaste-Manager.html">More Info</a>
-                        </div>
-                    </article>
-
-                    <article style="display: flex; flex-direction: column;" class="project">
-                        <h3>NOS Insurance Website</h3>
-                        <h4 class="header muted">Website Application</h4>
-                        <p class="small">พัฒนาเว็บแอปพลิเคชัน All-in-One Insurance Service สำหรับลูกค้า พนักงานขาย
-                            และผู้ดูแลระบบ
-                            ระบบนี้ครอบคลุมตั้งแต่การสมัครสมาชิก การเข้าสู่ระบบ การจัดการโปรไฟล์ การเลือกแพ็คเกจประกัน
-                            และระบบจำลองการชำระเงิน (Mock Payment) พร้อมการสร้าง QR Code</p>
-                        <div style="margin-top: 20px; margin-bottom: 20px;">
-                            <span class="chip">PHP</span>
-                            <span class="chip">HTML</span>
-                            <span class="chip">CSS</span>
-                            <span class="chip">JS</span>
-                            <span class="chip">SQL</span>
-                        </div>
-                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
-                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-NOS-Insurance.html">More Info</a>
-                            <a style="flex: 1; text-align: end; color: #ee6b6e;"class="small" href="http://nonthawat002.ddns.net:8086">Live Demo</a>
-                        </div>
-                    </article>
-
-                    <article style="display: flex; flex-direction: column;" class="project">
-                        <h3>SWU Metaverse</h3>
-                        <h4 class="header muted">Unity Game</h4>
-                        <p class="small">ได้รับรางวัลชนะเลิศในการประกวด Metaverse ของมหาวิทยาลัยศรีนครินทรวิโรฒ
-                            พัฒนาแพลตฟอร์ม Metaverse จำลองชีวิตในมหาวิทยาลัยให้สามารถเข้าถึงได้จากทุกที่
-                            รองรับผู้เล่นหลายคน มีระบบล็อกอิน, สร้างและปรับแต่งอวตาร, และสำรวจพื้นที่ 3
-                            มิติร่วมกับเพื่อน</p>
-                        <div style="margin-top: 20px; margin-bottom: 20px;">
-                            <span class="chip">Multiplayer</span>
-                            <span class="chip">Blender</span>
-                            <span class="chip">Unity</span>
-                            <span class="chip">C#</span>
-                        </div>
-                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
-                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-SWU-Metaverse.html">More Info</a>
-                            <a style="flex: 1; text-align: end; color: #ee6b6e;"class="small" href="https://mangosgo.com/mango15v2/">Live Demo</a>
-                        </div>
-                    </article>
-
-                    <article style="display: flex; flex-direction: column;" class="project">
-                        <h3>RE-Mind Space</h3>
-                        <h4 class="header muted">Unity VR-Game</h4>
-                        <p class="small">พัฒนาเกม Virtual Reality Multi-Sensory Game
-                            เพื่อช่วยฟื้นฟูความจำของผู้สูงอายุที่มีภาวะสมองเสื่อมระยะต้นและระยะกลาง
-                            เป็นความร่วมมือระหว่างคณะวิศวกรรมศาสตร์กับคณะกายภาพบำบัดของมหาวิทยาลัย</p>
-                        <div style="margin-top: 20px; margin-bottom: 20px;">
-                            <span class="chip">Blender</span>
-                            <span class="chip">Unity</span>
-                            <span class="chip">C#</span>
-                        </div>
-                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
-                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-Remindspace.html">More Info</a>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2 style="margin:0 0 12px 0">Skills & Tools</h2>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">
-                    <div class="project"><strong>Languages</strong>
-                        <div class="small muted">C, C#, JavaScript, HTML, CSS, PHP, Python</div>
-                    </div>
-                    <div class="project"><strong>Engines & Libs</strong>
-                        <div class="small muted">Unity, Unreal Engine, React</div>
-                    </div>
-                    <div class="project"><strong>Platforms</strong>
-                        <div class="small muted">Windows, WebGL, Android</div>
-                    </div>
-                    <div class="project"><strong>Tools</strong>
-                        <div class="small muted">Git, VSCode, Blender (basic)</div>
                     </div>
                 </div>
-            </section>
 
-            <section id="contact">
-                <h2 style="margin:0 0 12px 0">Contact</h2>
-                <div class="contact-card">
-                    <div>
-                        <div class="small muted"><strong>Personal email:</strong> nonthawatkrt@gmail.com</div>
-                        <div style="margin-top:8px" class="small muted"><strong>Team email:</strong>
-                            murasaki.devteam@gmail.com</div>
-                        <!-- <div style="margin-top:8px"><a class="btn" href="mailto:murasaki.devteam@gmail.com">Email me</a></div> -->
-
-                        <div style="margin-top:18px">
-                            <div class="small muted">Social</div>
-                            <div style="margin-top:8px;display:flex;gap:8px">
-                                <a class="chip" href="https://github.com/NonthawatKRT">GitHub</a>
-                                <!-- <a class="chip" href="#">LinkedIn</a> -->
-                                <a class="chip" href="https://nonthawatkrt.itch.io/">Itch.io</a>
-                            </div>
-                        </div>
-
-                        <div style="margin-top:18px;color:var(--muted)">
-                            We’re open to collaborations, internships, and exciting new opportunities. If you have a project, internship, or idea you’d like to work on together, we’d love to hear from you!
+                <!-- November 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Nov 15, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Development</span>
+                            <h3>EV Car Learning Project</h3>
+                            <p>Started developing Unity 3D game project as part of team focused on creating educational learning media about electric vehicle systems and components.</p>
+                            <a href="activity-ev-car-project.html" class="learn-more">View Details</a>
                         </div>
                     </div>
-
-                    <!-- <div>
-            <form onsubmit="return submitForm(event)">
-              <div class="field">
-                <label class="small muted">Your name</label>
-                <input id="name" placeholder="Your name" />
-              </div>
-              <div class="field" style="margin-top:8px">
-                <label class="small muted">Your email</label>
-                <input id="email" placeholder="you@example.com" />
-              </div>
-              <div class="field" style="margin-top:8px">
-                <label class="small muted">Message</label>
-                <textarea id="message" placeholder="Write a short message"></textarea>
-              </div>
-              <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
-                <button type="submit" class="btn">Send</button>
-              </div>
-            </form>
-          </div> -->
                 </div>
-            </section>
-        </main>
 
-        <footer>
-            <div>© <span id="year"></span> NonthawatKRT • Built with ❤️</div>
-            <div class="small muted">Made for demos and portfolio use</div>
-        </footer>
-    </div>
+                <!-- October 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Oct 22, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Workshop</span>
+                            <h3>Metaverse Workshop at Bangkok University</h3>
+                            <p>Conducted metaverse training and workshop for students at Bangkok University as part of lecturers team with Chula metaverse.</p>
+                            <a href="activity-bangkok-university-workshop.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- September 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Sep 3, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Exhibition</span>
+                            <h3>45th WUNCA Srinakharinwirot Event</h3>
+                            <p>Showcased SWU-Metaverse as part of Srinakharinwirot University team at the 45th WUNCA (World Universities Network Cooperation and Advancement) event.</p>
+                            <a href="activity-wunca-event.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- August 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Aug 16, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Workshop</span>
+                            <h3>Metaverse Workshop at Nursing College</h3>
+                            <p>Joined lecturers team with Chula metaverse to conduct metaverse training and workshop at Boromarajonani College of Nursing.</p>
+                            <a href="activity-nursing-college-workshop.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Aug 11, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Exhibition</span>
+                            <h3>AW Fair Exhibition</h3>
+                            <p>Participated in AW Fair as Srinakharinwirot University team member to showcase and demonstrate SWU-Metaverse project to visitors.</p>
+                            <a href="activity-aw-fair.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- July 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Jul 22, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">International</span>
+                            <h3>Japan Exchange Program with KAIT University</h3>
+                            <p>Selected as university representative to visit Japan with Chula metaverse team for metaverse development collaboration and knowledge exchange with KAIT University.</p>
+                            <a href="activity-japan-kait-exchange.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Jul 3, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Development</span>
+                            <h3>VR Caring on Spatial.io</h3>
+                            <p>Started developing cross-platform game (mobile, PC, VR) featuring old Thai traditional culture and nostalgia with minigames: Thai dessert cooking, traditional dressing, temple boat trip to Watchaiwatthanaram, and floating market experience.</p>
+                            <a href="activity-vr-caring.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- June 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Jun 29, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Workshop</span>
+                            <h3>Metaverse Workshop at Nakhon Pathom Rajabhat</h3>
+                            <p>Conducted metaverse training and workshop for students at Nakhon Pathom Rajabhat University with lecturers team and Chula metaverse.</p>
+                            <a href="activity-nakhon-pathom-workshop.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Jun 24, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Workshop</span>
+                            <h3>Metaverse Workshop at Royal Police Cadet Academy</h3>
+                            <p>Joined lecturers team with Chula metaverse to conduct metaverse training and workshop for students at Royal Police Cadet Academy.</p>
+                            <a href="activity-police-academy-workshop.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- April 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Apr 24, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Workshop</span>
+                            <h3>VR Game Development Workshop</h3>
+                            <p>Joined university lecturers team to conduct VR game development training and workshop for students at Srinakharinwirot University.</p>
+                            <a href="activity-vr-gamedev-workshop.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Apr 3, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Development</span>
+                            <h3>Remind Space VR Game</h3>
+                            <p>Began developing VR game in collaboration with Occupational Therapy students, creating therapeutic games for elderly and dementia patients to exercise cognitive function through engaging gameplay.</p>
+                            <a href="project-Remindspace.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- March 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Mar 28, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">Exhibition</span>
+                            <h3>CHULA Intania Expo & Thailand Metaverse Hackathon</h3>
+                            <p>Participated in Intania Expo at Chulalongkorn University, exhibiting SWU Metaverse at Thailand Metaverse hackathon and became partner of Mangosgo.com, the metaverse platform by Chulalongkorn University.</p>
+                            <a href="activity-chula-intania-expo.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="timeline-date-text">Mar 8, 2025</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <span class="category">🏆 Competition</span>
+                            <h3>SWU-Metaverse Competition - 1st Place Winner</h3>
+                            <p>Won first place in SWU-Metaverse workshop and competition, becoming the main development team to create the official metaverse platform for Srinakharinwirot University.</p>
+                            <a href="project-SWU-Metaverse.html" class="learn-more">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" style="padding: 100px 40px;">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <article class="project">
+                    <h3>Dungeons Of Shadow</h3>
+                    <p class="header">Unity Game</p>
+                    <p>Developed a Maze Escape game using Prim's Algorithm to procedurally generate mazes,
+                        increasing challenge and level variety for enhanced replayability.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="chip">Blender</span>
+                        <span class="chip">Unity</span>
+                        <span class="chip">C#</span>
+                    </div>
+                    <div class="links">
+                        <a style="color: var(--accent);" href="project-Dungeon-Of-Shadows.html">More Info</a>
+                        <a style="color: #ee6b6e;" href="http://nonthawat002.ddns.net:8085">Live Demo</a>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <h3>Food Waste Manager</h3>
+                    <p class="header">Android Application</p>
+                    <p>Developed an Android application to manage ingredients and menu items,
+                        reducing food waste in small restaurants. Features include checking ingredient availability for orders,
+                        automatic stock updates, adding new menu items, and inventory management.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="chip">Flutter</span>
+                        <span class="chip">Dart</span>
+                    </div>
+                    <div class="links">
+                        <a style="color: var(--accent);" href="project-FoodWaste-Manager.html">More Info</a>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <h3>NOS Insurance Website</h3>
+                    <p class="header">Website Application</p>
+                    <p>Developed an All-in-One Insurance Service web application for customers, sales staff,
+                        and administrators. The system covers registration, login, profile management, insurance package selection,
+                        and mock payment system with QR Code generation.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="chip">PHP</span>
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">JS</span>
+                        <span class="chip">SQL</span>
+                    </div>
+                    <div class="links">
+                        <a style="color: var(--accent);" href="project-NOS-Insurance.html">More Info</a>
+                        <a style="color: #ee6b6e;" href="http://nonthawat002.ddns.net:8086">Live Demo</a>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <h3>SWU Metaverse</h3>
+                    <p class="header">Unity Game</p>
+                    <p>Won 1st place in Srinakharinwirot University's Metaverse Competition.
+                        Developed a metaverse platform simulating university life accessible from anywhere,
+                        supporting multiplayer with login system, avatar creation and customization, and 3D space exploration with friends.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="chip">Multiplayer</span>
+                        <span class="chip">Blender</span>
+                        <span class="chip">Unity</span>
+                        <span class="chip">C#</span>
+                    </div>
+                    <div class="links">
+                        <a style="color: var(--accent);" href="project-SWU-Metaverse.html">More Info</a>
+                        <a style="color: #ee6b6e;" href="https://mangosgo.com/mango15v2/">Live Demo</a>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <h3>RE-Mind Space</h3>
+                    <p class="header">Unity VR-Game</p>
+                    <p>Developed a Virtual Reality Multi-Sensory Game
+                        to help restore memory for elderly patients with early to moderate stage dementia.
+                        A collaboration between the Faculty of Engineering and Faculty of Physical Therapy.</p>
+                    <div style="margin-top: 16px;">
+                        <span class="chip">Blender</span>
+                        <span class="chip">Unity</span>
+                        <span class="chip">C#</span>
+                    </div>
+                    <div class="links">
+                        <a style="color: var(--accent);" href="project-Remindspace.html">More Info</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-section">
+                <div class="contact-content">
+                    <h2>Contact</h2>
+                    <p>
+                        We're open to collaborations, internships, and exciting new opportunities. 
+                        If you have a project, internship, or idea you'd like to work on together, we'd love to hear from you!
+                    </p>
+                    
+                    <div style="margin: 32px 0;">
+                        <div style="margin-bottom: 12px;"><strong>Personal:</strong> nonthawatkrt@gmail.com</div>
+                        <div><strong>Team:</strong> murasaki.devteam@gmail.com</div>
+                    </div>
+
+                    <div class="contact-links">
+                        <a href="https://github.com/NonthawatKRT" target="_blank">GitHub</a>
+                        <a href="https://nonthawatkrt.itch.io/" target="_blank">Itch.io</a>
+                        <a href="mailto:nonthawatkrt@gmail.com">Email Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© <span id="year"></span> NonthawatKRT • Built with ❤️</p>
+            <p class="small" style="margin-top: 8px;">Made for demos and portfolio use</p>
+        </div>
+    </footer>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        function submitForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value || '—';
-            const email = document.getElementById('email').value || '—';
-            const message = document.getElementById('message').value || '—';
-            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-            // fallback - open mail client
-            window.location.href = `mailto:murasaki.devteam@gmail.com?subject=${encodeURIComponent('Portfolio contact from ' + name)}&body=${body}`;
-            return false;
-        }
+        // Smooth scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Elements to animate
+            const animateElements = document.querySelectorAll('.project, .timeline-item, .skill-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Hero section fade in
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.opacity = '0';
+                hero.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    hero.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    hero.style.opacity = '1';
+                    hero.style.transform = 'translateY(0)';
+                }, 100);
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add parallax effect to hero section
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                if (hero && scrolled < window.innerHeight) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                    hero.style.opacity = 1 - (scrolled / 600);
+                }
+            });
+
+            // Add hover animation to cards
+            const cards = document.querySelectorAll('.project, .skill-card, .timeline-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                });
+            });
+
+            // Stagger animation for timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                const timelineObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }, index * 80);
+                            timelineObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                timelineObserver.observe(item);
+            });
+
+            // Add loading animation
+            document.body.style.opacity = '0';
+            window.addEventListener('load', () => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            });
+        });
     </script>
 </body>
 

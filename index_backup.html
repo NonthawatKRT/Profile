@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Non — Portfolio</title>
+    <meta name="description" content="Portfolio of Non — Computer Engineering student, game & web developer." />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #121212;
+            --border: #1f1f1f;
+            --muted: #a0a0a0;
+            --text: #e8e8e8;
+            --accent: #3dd8e8;
+            --accent-hover: #2bc4d4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            margin: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero .name-highlight {
+            color: var(--accent);
+        }
+
+        .cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .about-section {
+            padding: 100px 40px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro {
+            margin-bottom: 60px;
+        }
+
+        .about-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .about-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .skills-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px 24px;
+        }
+
+        .skill-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+            padding: 0 40px;
+        }
+
+        .project {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .project h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .project .header {
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project p {
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .project .chip {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(61, 216, 232, 0.1);
+            border: 1px solid rgba(61, 216, 232, 0.2);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .project .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project .links a {
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .project .links a:hover {
+            opacity: 0.7;
+        }
+
+        footer {
+            padding: 60px 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 60px 40px;
+            margin: 0 40px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-content p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .contact-links a {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .contact-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .small {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .container,
+            .header-content,
+            .projects-grid,
+            .about-section,
+            .contact-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            nav {
+                gap: 16px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <img src="images/me.jpg" alt="Profile" class="logo">
+                <span>Y.KUNAKORN</span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#path">Path</a>
+                <a href="#projects">Project</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <p class="subtitle">Hello, I am 3rd year computer engineering student</p>
+            <h1>
+                <span class="name-highlight">Y.KUNAKORN</span><br>
+                PORTFOLIO
+            </h1>
+            <div class="cta">
+                <a class="btn btn-primary" href="#projects">Explore</a>
+                <a class="btn btn-secondary" href="#contact">Get my CV</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-intro">
+                    <h2>About</h2>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">My Journey</h3>
+                    <p>
+                        I am a Computer Engineering student at Srinakharinwirot University with a GPA of 3.53. 
+                        My journey involves deep diving into software engineer, from crafting intuitive frontend 
+                        interfaces to architecting robust backend systems.
+                    </p>
+                    <p>
+                        I am passionate about using technology to solve real-world problems and I am currently a 
+                        looking for internship opportunities for June 2026 to December 2026.
+                    </p>
+                    
+                    <div class="skills-tags">
+                        <span class="tag">Javascript</span>
+                        <span class="tag">Typescript</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Reactjs</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express.js</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">OpenAI</span>
+                    </div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="icon">💻</div>
+                        <h3>Full Stack Development</h3>
+                        <p>Working with both Frontend and Backend using cutting-edge technologies</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🤖</div>
+                        <h3>Articial Intelligence & Machine Learning</h3>
+                        <p>Trained Machine Learning models to improve user interaction</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">⚡</div>
+                        <h3>Performance Optimization</h3>
+                        <p>Optimizing website performance for speed and stability</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🎯</div>
+                        <h3>Problem Solving</h3>
+                        <p>Solving complex problems with creative thinking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="path" style="padding: 100px 40px;">
+            <h2>GitHub Repositories</h2>
+            <div class="projects-grid" style="padding: 0;">
+                <div class="project">
+                    <h3>TicTaxFlow</h3>
+                    <p class="header">CSS • ⭐ 0 • 🍴 0</p>
+                    <p>Term project of CPE311: Artificial Intelligence Labatory - AI Agent for Tax Deduction Management</p>
+                </div>
+                <div class="project">
+                    <h3>CPE121-Exercises</h3>
+                    <p class="header">Java • ⭐ 0 • 🍴 0</p>
+                    <p>This repository make for collecting code from CPE121 - Mobile Application Developments (Java)</p>
+                </div>
+                <div class="project">
+                    <h3>SilentVoices-UserInterface</h3>
+                    <p class="header">TypeScript • ⭐ 1 • 🍴 2</p>
+                    <p>Frontend of SilentVoices Project => https://github.com/YKUNAKORN/SilentVoice.git</p>
+                </div>
+                <div class="project">
+                    <h3>YKUNAKORN</h3>
+                    <p class="header">⭐ 0 • 🍴 0</p>
+                    <p></p>
+                </div>
+                <div class="project">
+                    <h3>TakeOrder</h3>
+                    <p class="header">TypeScript • ⭐ 0 • 🍴 0</p>
+                    <p>The web application that allow customers to scan QR-code and order foods in frontend part of restaurant.</p>
+                </div>
+                <div class="project">
+                    <h3>BlockMint</h3>
+                    <p class="header">TypeScript • ⭐ 0 • 🍴 0</p>
+                    <p>The smart contract of web3.To teach beginners how to wire Solidity contracts, frontend wallet interactions (MetaMask + ethers v6)</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a class="btn btn-secondary" href="https://github.com/NonthawatKRT" target="_blank">View More on GitHub</a>
+            </div>
+        </section>
+
+        <section id="projects" style="padding: 100px 40px;">
+            <h2>Projects</h2>
+                <div class="projects-grid">
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>Dungeons Of Shadow</h3>
+                        <h4 class="header muted">Unity Game</h4>
+                        <p class="small">พัฒนาเกมแนว Maze Escape โดยใช้ Prim’s Algorithm ในการสุ่มสร้างเขาวงกต
+                            เพื่อเพิ่มความท้าทายและความหลากหลายของด่าน</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Blender</span>
+                            <span class="chip">Unity</span>
+                            <span class="chip">C#</span>
+                        </div>
+
+                        <div style=" flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1;text-align: start; color: var(--accent);"class="small" href="project-Dungeon-Of-Shadows.html">More Info</a>
+                            <a style="flex: 1;text-align: end; color: #ee6b6e;" class="small" href="http://nonthawat002.ddns.net:8085">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>Food Waste Manager</h3>
+                        <h4 class="header muted">Android Application</h4>
+                        <p class="small">พัฒนาแอปพลิเคชันบนระบบ Android เพื่อจัดการวัตถุดิบและเมนูอาหาร
+                            ลดปัญหาการสูญเสียอาหารในร้านอาหารขนาดเล็ก โดยมีฟังก์ชันตรวจสอบวัตถุดิบเพียงพอต่อออเดอร์
+                            อัปเดตสต็อกอัตโนมัติ เพิ่มเมนูใหม่ และจัดการคลังสินค้า</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Flutter</span>
+                            <span class="chip">Dart</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-FoodWaste-Manager.html">More Info</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>NOS Insurance Website</h3>
+                        <h4 class="header muted">Website Application</h4>
+                        <p class="small">พัฒนาเว็บแอปพลิเคชัน All-in-One Insurance Service สำหรับลูกค้า พนักงานขาย
+                            และผู้ดูแลระบบ
+                            ระบบนี้ครอบคลุมตั้งแต่การสมัครสมาชิก การเข้าสู่ระบบ การจัดการโปรไฟล์ การเลือกแพ็คเกจประกัน
+                            และระบบจำลองการชำระเงิน (Mock Payment) พร้อมการสร้าง QR Code</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">PHP</span>
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JS</span>
+                            <span class="chip">SQL</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-NOS-Insurance.html">More Info</a>
+                            <a style="flex: 1; text-align: end; color: #ee6b6e;"class="small" href="http://nonthawat002.ddns.net:8086">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>SWU Metaverse</h3>
+                        <h4 class="header muted">Unity Game</h4>
+                        <p class="small">ได้รับรางวัลชนะเลิศในการประกวด Metaverse ของมหาวิทยาลัยศรีนครินทรวิโรฒ
+                            พัฒนาแพลตฟอร์ม Metaverse จำลองชีวิตในมหาวิทยาลัยให้สามารถเข้าถึงได้จากทุกที่
+                            รองรับผู้เล่นหลายคน มีระบบล็อกอิน, สร้างและปรับแต่งอวตาร, และสำรวจพื้นที่ 3
+                            มิติร่วมกับเพื่อน</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Multiplayer</span>
+                            <span class="chip">Blender</span>
+                            <span class="chip">Unity</span>
+                            <span class="chip">C#</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-SWU-Metaverse.html">More Info</a>
+                            <a style="flex: 1; text-align: end; color: #ee6b6e;"class="small" href="https://mangosgo.com/mango15v2/">Live Demo</a>
+                        </div>
+                    </article>
+
+                    <article style="display: flex; flex-direction: column;" class="project">
+                        <h3>RE-Mind Space</h3>
+                        <h4 class="header muted">Unity VR-Game</h4>
+                        <p class="small">พัฒนาเกม Virtual Reality Multi-Sensory Game
+                            เพื่อช่วยฟื้นฟูความจำของผู้สูงอายุที่มีภาวะสมองเสื่อมระยะต้นและระยะกลาง
+                            เป็นความร่วมมือระหว่างคณะวิศวกรรมศาสตร์กับคณะกายภาพบำบัดของมหาวิทยาลัย</p>
+                        <div style="margin-top: 20px; margin-bottom: 20px;">
+                            <span class="chip">Blender</span>
+                            <span class="chip">Unity</span>
+                            <span class="chip">C#</span>
+                        </div>
+                        <div style="    flex: 1; justify-content: start; align-items: end;" class="links">
+                            <a style="flex: 1; text-align: start; color: var(--accent);"class="small" href="project-Remindspace.html">More Info</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2 style="margin:0 0 12px 0">Skills & Tools</h2>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">
+                    <div class="project"><strong>Languages</strong>
+                        <div class="small muted">C, C#, JavaScript, HTML, CSS, PHP, Python</div>
+                    </div>
+                    <div class="project"><strong>Engines & Libs</strong>
+                        <div class="small muted">Unity, Unreal Engine, React</div>
+                    </div>
+                    <div class="project"><strong>Platforms</strong>
+                        <div class="small muted">Windows, WebGL, Android</div>
+                    </div>
+                    <div class="project"><strong>Tools</strong>
+                        <div class="small muted">Git, VSCode, Blender (basic)</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2 style="margin:0 0 12px 0">Contact</h2>
+                <div class="contact-card">
+                    <div>
+                        <div class="small muted"><strong>Personal email:</strong> nonthawatkrt@gmail.com</div>
+                        <div style="margin-top:8px" class="small muted"><strong>Team email:</strong>
+                            murasaki.devteam@gmail.com</div>
+                        <!-- <div style="margin-top:8px"><a class="btn" href="mailto:murasaki.devteam@gmail.com">Email me</a></div> -->
+
+                        <div style="margin-top:18px">
+                            <div class="small muted">Social</div>
+                            <div style="margin-top:8px;display:flex;gap:8px">
+                                <a class="chip" href="https://github.com/NonthawatKRT">GitHub</a>
+                                <!-- <a class="chip" href="#">LinkedIn</a> -->
+                                <a class="chip" href="https://nonthawatkrt.itch.io/">Itch.io</a>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:18px;color:var(--muted)">
+                            We’re open to collaborations, internships, and exciting new opportunities. If you have a project, internship, or idea you’d like to work on together, we’d love to hear from you!
+                        </div>
+                    </div>
+
+                    <!-- <div>
+            <form onsubmit="return submitForm(event)">
+              <div class="field">
+                <label class="small muted">Your name</label>
+                <input id="name" placeholder="Your name" />
+              </div>
+              <div class="field" style="margin-top:8px">
+                <label class="small muted">Your email</label>
+                <input id="email" placeholder="you@example.com" />
+              </div>
+              <div class="field" style="margin-top:8px">
+                <label class="small muted">Message</label>
+                <textarea id="message" placeholder="Write a short message"></textarea>
+              </div>
+              <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+                <button type="submit" class="btn">Send</button>
+              </div>
+            </form>
+          </div> -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>© <span id="year"></span> NonthawatKRT • Built with ❤️</div>
+            <div class="small muted">Made for demos and portfolio use</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value || '—';
+            const email = document.getElementById('email').value || '—';
+            const message = document.getElementById('message').value || '—';
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            // fallback - open mail client
+            window.location.href = `mailto:murasaki.devteam@gmail.com?subject=${encodeURIComponent('Portfolio contact from ' + name)}&body=${body}`;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

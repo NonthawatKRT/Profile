@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Global Game Jam 2025 - NONTHAWAT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #121212;
+            --border: #1f1f1f;
+            --muted: #a0a0a0;
+            --text: #e8e8e8;
+            --accent: #3dd8e8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .meta {
+            color: var(--muted);
+            margin-bottom: 32px;
+            font-size: 1.1rem;
+        }
+
+        .content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .content h2 {
+            margin-top: 32px;
+            margin-bottom: 16px;
+            font-size: 1.8rem;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .tag {
+            padding: 8px 16px;
+            background: rgba(61, 216, 232, 0.1);
+            border: 1px solid rgba(61, 216, 232, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--accent);
+        }
+
+        .highlight-box {
+            background: rgba(61, 216, 232, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html#activities" class="back-link">← Back to Portfolio</a>
+        
+        <h1>Global Game Jam 2025</h1>
+        <p class="meta">Game Jam Event • January 2025</p>
+
+        <div class="tags">
+            <span class="tag">Unity</span>
+            <span class="tag">Team Work</span>
+            <span class="tag">Game Jam</span>
+            <span class="tag">48 Hours</span>
+        </div>
+
+        <div class="content">
+            <h2>Overview</h2>
+            <p>
+                Participated in the Global Game Jam 2025, the world's largest game creation event. 
+                Our team had 48 hours to create a complete game from scratch based on the surprise theme revealed at the start.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Theme:</strong> [Add your jam theme here]<br>
+                <strong>Team Size:</strong> 4 members<br>
+                <strong>Role:</strong> Gameplay Programmer & Game Designer
+            </div>
+
+            <h2>The Challenge</h2>
+            <p>
+                Working under extreme time pressure, we had to rapidly prototype ideas, make quick design decisions, 
+                and implement features efficiently. The challenge was not just technical but also about teamwork, 
+                communication, and creative problem-solving.
+            </p>
+
+            <h2>What We Built</h2>
+            <p>
+                [Describe your game here - gameplay mechanics, unique features, what made it special]
+            </p>
+
+            <ul>
+                <li>Implemented core gameplay mechanics in the first 12 hours</li>
+                <li>Created responsive player controls and smooth character movement</li>
+                <li>Developed puzzle/challenge systems aligned with the theme</li>
+                <li>Integrated audio and visual feedback for player actions</li>
+                <li>Polished the game experience in the final hours</li>
+            </ul>
+
+            <h2>Game Screenshots</h2>
+            <div class="image-gallery">
+                <!-- Add your images here -->
+                <img src="images/placeholder-game1.jpg" alt="Game Screenshot 1">
+                <img src="images/placeholder-game2.jpg" alt="Game Screenshot 2">
+                <img src="images/placeholder-game3.jpg" alt="Game Screenshot 3">
+                <img src="images/placeholder-game4.jpg" alt="Team Photo">
+            </div>
+            <p style="text-align: center; color: var(--muted); font-size: 0.9rem;">
+                [Add your actual game screenshots and team photos]
+            </p>
+
+            <h2>Technical Highlights</h2>
+            <ul>
+                <li><strong>Unity Physics:</strong> Implemented custom physics interactions for gameplay mechanics</li>
+                <li><strong>State Machines:</strong> Created robust character and game state management</li>
+                <li><strong>Procedural Generation:</strong> Generated level elements dynamically</li>
+                <li><strong>Audio Integration:</strong> Implemented dynamic audio system with FMOD</li>
+            </ul>
+
+            <h2>What I Learned</h2>
+            <p>
+                This experience taught me valuable lessons about rapid prototyping, scope management, 
+                and the importance of clear communication in team environments. Working under time constraints 
+                forced us to prioritize features and make strategic decisions about what would have the most impact.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Key Takeaways:</strong>
+                <ul>
+                    <li>Rapid prototyping and iterative development</li>
+                    <li>Effective time management under pressure</li>
+                    <li>Team collaboration and clear communication</li>
+                    <li>Making scope decisions quickly and confidently</li>
+                </ul>
+            </div>
+
+            <h2>Links</h2>
+            <p>
+                <a href="#" style="color: var(--accent); text-decoration: none;">Play the Game on itch.io →</a><br>
+                <a href="#" style="color: var(--accent); text-decoration: none;">View Source Code on GitHub →</a><br>
+                <a href="#" style="color: var(--accent); text-decoration: none;">Global Game Jam Page →</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
