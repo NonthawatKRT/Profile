@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Midnight Shift - First Solo Game Project - NONTHAWAT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg:#0a0a0a;--card:#121212;--border:#1f1f1f;--muted:#a0a0a0;--text:#e8e8e8;--accent:#3dd8e8;--accent-hover:#2bc4d4}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+        a{color:var(--accent);text-decoration:none;transition:opacity 0.2s}
+        a:hover{opacity:0.8}
+        header{position:fixed;top:0;left:0;right:0;background:rgba(10,10,10,0.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:1000;padding:20px 0}
+        .header-content{max-width:1200px;margin:0 auto;padding:0 40px;display:flex;align-items:center}
+        .brand{color:var(--muted);font-weight:500;transition:color 0.2s}
+        .brand:hover{color:var(--text)}
+        .project-detail{max-width:900px;margin:0 auto;padding:120px 40px 60px}
+        .project-header{margin-bottom:48px}
+        .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+        .tag{padding:8px 16px;background:rgba(61,216,232,0.1);border:1px solid rgba(61,216,232,0.2);border-radius:20px;font-size:14px;color:var(--accent);font-weight:500}
+        h1{font-size:2.5rem;margin-bottom:12px}
+        .subtitle{color:var(--muted);font-size:1.1rem}
+        .project-content{margin-top:48px}
+        .content-section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:40px;margin-bottom:32px}
+        .content-section h2{font-size:1.8rem;margin-bottom:16px}
+        .content-section p{color:var(--muted);line-height:1.8;margin-bottom:16px}
+        .content-section ul{padding-left:24px;color:var(--muted);margin-top:16px}
+        .content-section li{margin-bottom:12px;line-height:1.6}
+        .image-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:32px 0}
+        .image-grid img{width:100%;border-radius:12px;object-fit:cover;height:250px;background:var(--card);border:1px solid var(--border);transition:transform 0.3s}
+        .image-grid img:hover{transform:scale(1.02)}
+        .video-container{margin:32px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+        .video-container video{width:100%;display:block}
+        .tech-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+        .tech-tag{padding:10px 18px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--muted);font-weight:500}
+        footer{margin-top:80px;padding:40px;border-top:1px solid var(--border);text-align:center}
+        .footer-content{color:var(--muted)}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html#activities" class="brand" style="color: var(--accent);">
+                <span>← Back to Portfolio</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <section class="project-header">
+            <div class="tags">
+                <span class="tag">Unity</span>
+                <span class="tag">Horror Game</span>
+                <span class="tag">Solo Developer</span>
+                <span class="tag">First Project</span>
+            </div>
+            <h1>Midnight Shift</h1>
+            <p class="subtitle">December 20, 2023 • Unity Game Development</p>
+        </section>
+
+        <section class="project-content">
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>
+                    Midnight Shift is my very first self-developed game project that marked the beginning of my game 
+                    development journey. This story-driven horror game was created purely from passion and served as 
+                    my introduction to full-stack game development.
+                </p>
+                <p>
+                    As a solo developer, I handled every aspect of the project - from level design and game design 
+                    to Unity programming and game optimization. This project was instrumental in teaching me the 
+                    fundamentals of Unity Editor and game development workflows.
+                </p>
+            </div>
+
+            <div class="video-container">
+                <video controls>
+                    <source src="images/midnightshift/midnightshift.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="image-grid">
+                <img src="images/midnightshift/gamescreenshort1.png" alt="Midnight Shift gameplay 1">
+                <img src="images/midnightshift/gamescreenshort2.png" alt="Midnight Shift gameplay 2">
+                <img src="images/midnightshift/gamescreenshort3.png" alt="Midnight Shift gameplay 3">
+                <img src="images/midnightshift/gamescreenshort4.png" alt="Midnight Shift gameplay 4">
+                <img src="images/midnightshift/gamescreenshort5.png" alt="Midnight Shift gameplay 5">
+                <img src="images/midnightshift/gamescreenshort6.png" alt="Midnight Shift gameplay 6">
+            </div>
+
+            <div class="content-section">
+                <h2>My Role - Full-Stack Developer</h2>
+                <ul>
+                    <li><strong>Level Design:</strong> Crafted atmospheric environments and designed player progression through spaces</li>
+                    <li><strong>Game Design:</strong> Created game mechanics, horror elements, and story progression</li>
+                    <li><strong>Unity Programming:</strong> Implemented all game systems, player controls, AI behavior, and interactions</li>
+                    <li><strong>Game Optimization:</strong> Optimized performance, lighting, and rendering for smooth gameplay</li>
+                    <li><strong>Audio Design:</strong> Integrated sound effects and ambient audio to enhance horror atmosphere</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>What I Learned</h2>
+                <p>
+                    This passion project became my crash course in game development. Working independently forced me to 
+                    learn and master multiple disciplines:
+                </p>
+                <ul>
+                    <li>Deep understanding of Unity Editor, components, and workflows</li>
+                    <li>C# scripting for game logic and systems</li>
+                    <li>Level design principles and spatial storytelling</li>
+                    <li>Performance optimization techniques</li>
+                    <li>Project management and iteration processes</li>
+                    <li>Problem-solving skills when facing development challenges alone</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Development Highlights</h2>
+                <p>
+                    Being my first project, Midnight Shift taught me invaluable lessons about game development that 
+                    I continue to apply in all my subsequent projects. The experience of seeing a project through 
+                    from concept to completion, handling every aspect myself, built a strong foundation for my 
+                    career as a game developer.
+                </p>
+                <p>
+                    The project was driven purely by passion - no external requirements or deadlines. This freedom 
+                    allowed me to experiment, fail, learn, and grow as a developer without constraints.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Technologies Used</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">Unity</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">Blender</span>
+                    <span class="tech-tag">Level Design</span>
+                    <span class="tech-tag">Game Optimization</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 NONTHAWAT. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
